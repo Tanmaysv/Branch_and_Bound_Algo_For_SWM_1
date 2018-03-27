@@ -1,0 +1,100 @@
+.container{
+
+
+
+}
+#steps{
+
+	margin-right: 0px;
+	float: right;
+
+}
+#directions{
+
+	clear : left;
+
+
+}
+
+#cost_info{
+
+	clear : left;
+
+}
+
+#color_info{
+
+	clear : left;
+	
+}
+
+#bin1{
+	float: left;
+	display: none;
+
+}
+
+#bin2{
+
+	float: left;
+	display: none;
+
+
+}
+
+#bin3{
+	float:left;
+	display: none;
+
+}
+
+#bin4{
+	float:left;
+	display: none;
+
+}
+
+#myCanvas{
+		clear : left;
+		/*background-size: 100% 100%;
+		/*background-color: blue; 
+	  	width: 100%;
+	  	height: auto;
+	*/
+}
+
+#bin5{
+	float : left;
+	display: none;
+
+}
+
+#bin6{
+	float : left;
+	display: none;
+
+}
+
+#bin7{
+	float : left;
+	display: none;
+
+}
+
+#bin8{
+	float : left;
+	display: none;
+
+}
+
+#bin9{
+	float : left;
+	display: none;
+
+}
+
+#bin10{
+	float : left;
+	display: none;
+
+}

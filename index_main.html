@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+		<script src="p5.min.js"></script>
+	    <script src="p5.dom.min.js"></script>
+	    <script src="p5.sound.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="style_main.css">
+    <meta charset="UTF-8">
+	
+
+    
+    <script>
+      // Initialize Firebase
+      //var firebase = require('firebase');
+      
+    </script>
+    </head>
+    <body>
+
+
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header"> 
+            <button class="navbar-toggle btn btn-success" data-toggle = "collapse" data-target = ".navbar-collapse">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+
+            </div> 
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+                    <li class="nav"><a href="instructions.html">Instructions</a></li>
+                    <li class="nav"><a href="about.html">About</a></li>
+                    <li class="nav"><a href="contact.html">Contact</a></li>
+                    <li class = "nav"><a href="index_main.html">Log Out</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="container">
+          <!--<h2>Form Validation</h2>-->
+          <!-- Trigger the modal with a button -->
+          <div class = "jumbotron">
+          <h1 class = >Login</h1>
+
+          <form id = "credentials"  name = "val_form" >
+                      <div class = "form-group">
+                      <label>Administrator Name </label>
+                      <input type="email" class="form-control" name = "username" placeholder="xyz@example.com" id="username"  required="true">
+                      </div>
+                      <div class = "form-group">
+                      <label>Administrator Password </label>     
+                      <input type = "password" class="form-control" placeholder="Enter you password" name = "password" id = "password" required="true">
+                      </div>
+                      <input type="button" class = "btn btn-info btn-lg" onclick="validate()" value="Submit" >
+                      
+          </form>
+        </div>
+
+          <h4 id = "info" style="display: none;" >You have entered a valid username and password.<br>Click below to proceed</h4>
+
+
+
+          <button id="proceed_btn" type="Submit" class="btn btn-primary btn-lg"  style="display: none;"  data-toggle="modal" data-target="#myModal"  >Proceed</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <form >
+                      <div class = "form-group">
+                      <label>Enter the URL of your Map </label>
+                      <input type="text" id = "url_ip" value="vjti.jpg" id="entered-url" required="true">
+                      </div>
+                      <div class = "form-group">
+                      <label>Number of dustbins </label>     
+                      <input type = "number" min = "3" max = "10" value = "4" name = "no_of_nodes" id = "no_of_nodes" required="true">
+                      </div>
+                      <input type="button" class = "btn btn-info btn-lg" value="Submit" onclick="get_val()">
+                      
+                  </form>
+                  <a href="index.html"><h2>Click to proceed</h2></a>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+
+
+
+        <script type="text/javascript">
+          window.onload = function(){
+
+            
+            var xhr = new XMLHttpRequest();
+            var file = "https://www.google.com";
+            var randomNum = Math.round(Math.random() * 10000);
+         
+            xhr.open("HEAD", file + "?rand=" + randomNum , true);
+            xhr.send();
+             
+            xhr.addEventListener("readystatechange", processRequest, false);
+         
+            function processRequest(e) {
+              if (xhr.readyState == 4) {
+                if (xhr.status >= 200 && xhr.status < 304) {
+                  alert("connection exists!");
+                  localStorage["connection"] = "exists";
+                } else {
+                  alert("connection doesn't exist!");
+                  
+                }
+              }
+            }
+
+
+
+
+
+          }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+        <script src="js/bootstrap.min.js"> </script>
+
+    </body>

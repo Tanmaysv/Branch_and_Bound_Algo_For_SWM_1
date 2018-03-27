@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+		<script src="p5.min.js"></script>
+	    <script src="p5.dom.min.js"></script>
+	    <script src="p5.sound.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+	
+
+    
+    <script>
+      // Initialize Firebase
+      //var firebase = require('firebase');
+      
+    </script>
+    </head>
+  <body >
+	
+
+    	
+
+        <!--<div id = "steps">
+
+            <p>Step 1 : Enter N no. of dustbins and click the button below</p>
+            <p>Step 2 : Place the dustbins on the map</p>
+            <p>Step 3 : Enter the edge cot values in the input boxes</p>
+            <p>Step 4 : Click on any of the SAVE buttons to run the Algorithm</p>
+            
+
+
+        </div>
+        -->
+    <div class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header"> 
+            <button class="navbar-toggle btn btn-success" data-toggle = "collapse" data-target = ".navbar-collapse">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+
+            </div> 
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+                    <li class="nav"><a href="instructions.html">Instructions</a></li>
+                    <li class="nav"><a href="about.html">About</a></li>
+                    <li class="nav"><a href="contact.html">Contact</a></li>
+                    <li class = "nav"><a href="index_main.html">Log Out</a></li>
+
+                </ul>
+            </div>
+
+    </div>
+
+    
+    <div class = "container jumbotron"> 
+        
+
+        <h2> Please enter the cost of each edge in the range 1-100</h1>
+
+
+
+      <form id = "bin1" action = "" >
+        <div class="form-group" id = "label11"><label>1 -> 2 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name = "e1" id = "e1"></div>
+        
+        <div class="form-group" id = "label21"><label>1 -> 3 : </label><input class="form-control" type="number" min="1" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label31"><label>1 -> 4 : </label><input class="form-control" type="number" min="1" max="100" id="e3" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label41"><label>1 -> 5 : </label><input class="form-control" type="number" min="1" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label51"><label>1 -> 6 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label61"><label>1 -> 7 : </label><input class="form-control" type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label71"><label>1 -> 8 : </label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label81"><label>1 -> 9 : </label><input class="form-control" type="number" min="1" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label91"><label>1 -> 10 : </label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+        
+        <input type="button" class="btn btn-primary" value="Run Algorithm" onclick="insert()" />
+        
+
+      </form>
+      <form id = "bin2" >
+        <div class="form-group" id = "label12"><label>2 -> 1 : </label><input class="form-control" type="number" min="1" max="100" id="e1" name ="e1" value = "50"></div>
+        
+        <div class="form-group" id = "label22"><label>2 -> 3 : </label><input class="form-control" type="number" name="e2" min="1" max="100" id = "e2" value = "50"></div>
+        
+        <div class="form-group" id = "label32"><label>2 -> 4 : </label><input class="form-control" type="number" name="e3" id = "e3" min="1" max="100" value = "50"></div>
+        
+        <div class="form-group" id = "label42"><label>2 -> 5 : </label><input class="form-control" type="number" min="1" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label52"><label>2 -> 6 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label62"><label>2 -> 7 : </label><input class="form-control" type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label72"><label>2 -> 8 : </label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label82"><label>2 -> 9 : </label><input class="form-control" type="number" min="1" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label92"><label>2 -> 10 : </label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+        
+        
+      </form>
+      <form id = "bin3" >
+        
+        <div class="form-group" id = "label13"><label>3 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label23"><label>3 -> 2 : </label><input type="number" min="1" max="100" class="form-control" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label33"><label>3 -> 4 : </label> <input type="number" min="1" max="100" id="e3" class="form-control" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label43"><label> 3 -> 5 : </label><input type="number" min="1" class="form-control" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label53"><label>3 -> 6 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label63"><label>3 -> 7 :</label><input  type="number" min="1" max="100" id="e6" class="form-control" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label73"><label>3 -> 8 : </label><input type="number" min="1" class="form-control" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label83"><label>3 -> 9 : </label><input type="number" min="1" class="form-control" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label93"><label>3 -> 10 : </label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+        </form>
+      
+      <form id = "bin4" >
+        
+        <div class="form-group" id = "label14"><label>4 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label24"><label>4 -> 2 : </label><input class="form-control" type="number" min="1" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label34"><label>4 -> 3 : </label><input class="form-control" type="number" min="1" max="100" id="e3" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label44"><label>4 -> 5 :</label> <input class="form-control" type="number" min="1" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label54"><label>4 -> 6 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label64"><label>4 -> 7 :</label><input class="form-control"  type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label74"><label>4 -> 8 : </label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label84"><label>4 -> 9 : </label><input class="form-control" type="number" min="1" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label94"><label>4 -> 10 : </label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+           </form>
+
+      <form id = "bin5" >
+        
+        <div class="form-group" id = "label15"><label> 5 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label25"><label>5 -> 2 : </label><input class="form-control" type="number" min="1" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label35"><label>5 -> 3 : </label><input class="form-control" type="number" min="1" max="100" id="e3" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label45"><label>5 -> 4 : </label><input class="form-control" type="number" min="1" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label55"><label>5 -> 6 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label65"><label>5 -> 7 : </label><input class="form-control"  type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label75"><label>5 -> 8 :</label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label85"><label>5 -> 9 : </label><input class="form-control" type="number" min="1" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label95"><label>5 -> 10 :</label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+           </form>
+
+      <form id = "bin6" >
+        
+        
+        <div class="form-group" id = "label16"><label>6 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label26"><label>6 -> 2 : </label><input class="form-control" type="number" min="1" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label36"><label>6 -> 3 : </label><input class="form-control" type="number" min="1" max="100" id="e3" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label46"><label>6 -> 4 : </label><input class="form-control" type="number" min="1" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label56"><label>6 -> 5 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label66"><label>6 -> 7 : </label><input class="form-control"  type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label76"><label>6 -> 8 : </label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label86"><label>6 -> 9 : </label><input class="form-control" type="number" min="1" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label96"><label>6 -> 10 :</label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+           </form>
+      
+      <form id = "bin7" >
+        
+        <div class="form-group" id = "label17"><label>7 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label27"><label>7 -> 2 : </label><input class="form-control" type="number" min="1" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label37"><label>7 -> 3 : </label><input class="form-control" type="number" min="1" max="100" id="e3" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label47"><label>7 -> 4 : </label><input class="form-control" type="number" min="1" max="100" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label57"><label>7 -> 5 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label67"><label>7 -> 6 : </label><input class="form-control"  type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label77"><label>7 -> 8 : </label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label87"><label>7 -> 9 : </label><input class="form-control" type="number" min="1" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label97"><label>7 -> 10 :</label><input class="form-control" type="number" min="1" max="100" id="e9" name = "e9" value = "50"></div>
+          </form>
+
+      <form id = "bin8" >
+        
+        <div class="form-group" id = "label18"><label>8 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label28"><label>8 -> 2 : </label><input type="number" min="1" class="form-control" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label38"><label>8 -> 3 : </label><input type="number" min="1" max="100" id="e3" class="form-control" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label48"><label>8 -> 4 : </label><input type="number" min="1" max="100" id="e4" name = "e4" class="form-control" value = "50"></div>
+        
+        <div class="form-group" id = "label58"><label>8 -> 5 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label68"><label>8 -> 6 : </label><input  type="number" class="form-control" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label78"><label>8 -> 7 : </label><input type="number" min="1" max="100" class="form-control" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label88"><label>8 -> 9 : </label><input type="number" min="1" max="100" id="e8" class="form-control" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label98"><label>8 -> 10 : </label><input type="number" min="1" max="100" id="e9" name = "e9" class="form-control" value = "50"></div>
+        
+        
+      </form>
+
+      <form id = "bin9" >
+        
+        <div class="form-group" id = "label19"><label>9 -> 1 : </label><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label29"><label>9 -> 2 : </label><input class="form-control" type="number" min="1" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label39"><label>9 -> 3 : </label><input type="number" class="form-control" min="1" max="100" id="e3" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label49"><label>9 -> 4 : </label><input type="number" min="1" max="100" class="form-control" id="e4" name = "e4" value = "50"></div>
+        
+        <div class="form-group" id = "label59"><label>9 -> 5 : </label><input type="number" min="1" max="100" id="e5" name = "e5" class="form-control" value = "50"></div>
+        
+        <div class="form-group" id = "label69"><label>9 -> 6 : </label><input class="form-control"  type="number" min="1" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label79"><label>9 -> 7 : </label><input class="form-control" type="number" min="1" max="100" id="e7" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label89"><label>9 -> 8 : </label><input type="number" min="1" class="form-control" max="100" id="e8" name = "e8" value = "50"></div>
+        
+        <div class="form-group" id = "label99"><label>9 -> 10 : </label><input type="number" min="1" max="100" id="e9" class="form-control" name = "e9" value = "50"></div>
+        
+      </form>
+
+      <form id = "bin10" >
+        
+        <div class="form-group" id = "label110"><label>10 -> 1 : </label><input class="form-control" type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1"></div>
+        
+        <div class="form-group" id = "label210"><label>10 -> 2 : </label><input type="number" min="1" class="form-control" max="100" id="e2" value = "50" name = "e2"></div>
+        
+        <div class="form-group" id = "label310"><label>10 -> 3 : </label><input type="number" min="1" max="100" id="e3" class="form-control" name = "e3" value = "50"></div>
+        
+        <div class="form-group" id = "label410"><label>10 -> 4 : </label><input type="number" min="1" max="100" id="e4" name = "e4" class="form-control" value = "50"></div>
+        
+        <div class="form-group" id = "label510"><label>10 -> 5 : </label><input class="form-control" type="number" min="1" max="100" id="e5" name = "e5" value = "50"></div>
+        
+        <div class="form-group" id = "label610"><label>10 -> 6 : </label><input  type="number" min="1" class="form-control" max="100" id="e6" name = "e6" value = "50"></div>
+        
+        <div class="form-group" id = "label710"><label>10 -> 7 : </label><input type="number" min="1" max="100" id="e7" class="form-control" name = "e7" value = "50"></div>
+        
+        <div class="form-group" id = "label810"><label>10 -> 8 : </label><input type="number" min="1" max="100" id="e8" name = "e8" class="form-control" value = "50"></div>
+        
+        <div class="form-group" id = "label910"><label>10 -> 9 : </label><input type="number" min="1" max="100" id="e9" name = "e9" value = "50" class="form-control"></div>
+        
+      </form>
+
+
+    </div>
+    
+    
+    <div id = "directions"> </div>
+    <div id = "cost_info"></div>
+    <!--<h2>Assuming that we start our journey from Bin No.1</h2> -->
+    
+    <img id="scream" style = "display : none; width : 500px"   alt="The Scream">
+    <canvas id="myCanvas"   style="border:3px solid #c3c3c3;"></canvas>
+    
+
+    <!--<input type="button" name="Run the main algorithm to find shortest path" onclick="algo()"> -->
+    <div class="col-md-6" >
+        <div class="table-responsive">
+        <table id = "color_info" class="table table-striped table-bordered table-hover table-condensed" style="width:100%" border="1">
+        
+
+        </table>
+        </div>
+	<div id = "info_verify">Path to be taken as per BIN ID : <br></div>
+
+    </div>
+    <div id = "fbase_verify"></div>
+	<script>
+        window.onload = function() {
+        feed_image();
+        
+        no_nodes();
+        window.setTimeout(feed_image, 500);
+
+    };
+        
+    </script> 
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-database.js"></script>
+    
+    <script type="text/javascript" src="sketch_main.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"> </script>
+
+
+    
+  </body>
+</html>
