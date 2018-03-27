@@ -3,7 +3,7 @@ Javascript and HTML based web-app that uses Branch and Bound Route Optimization 
 
 Steps to go through this application.
 
-1. Clone the project as is and open the index_main.html in chrome.
+1. Clone the project as is and unzip the bootstrap zip file. Open the index_main.html in chrome.
 2. Username = nishant_himath@yahoo.com, Password = 141090049
 3. Click on Submit...And then click on the now appearing Proceed
 4. Enter the URL of a map of your choice and the no. of dustbins( between 3 and 10) to be placed on the map
