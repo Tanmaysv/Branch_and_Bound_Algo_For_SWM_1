@@ -1,0 +1,24 @@
+#slider{
+	position: relative;
+    top:50px;
+    bottom: 500px
+  	
+}
+
+.jumbotron{
+	position:relative;
+	padding-left:20px;
+	top:50px;
+}
+
+#Image{
+	height: 100%;
+	width: 100%;
+	left:150px;
+}
+
+.carousel-caption > h2 {
+	color:#fff!important; 
+	font-weight:bold;
+	margin-right:300px;
+}

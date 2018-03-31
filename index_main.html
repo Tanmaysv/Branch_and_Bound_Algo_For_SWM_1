@@ -6,6 +6,7 @@
 		<script src="p5.min.js"></script>
 	    <script src="p5.dom.min.js"></script>
 	    <script src="p5.sound.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/styling.css">
 	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	    <link rel="stylesheet" type="text/css" href="style_main.css">
     <meta charset="UTF-8">
@@ -42,7 +43,59 @@
         </div>
 
 
-        <div class="container">
+        <div class = "carousel" id="slider" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#slider" data-slide-to="0" class="active"></li>
+              <li data-target="#slider" data-slide-to="1"></li>
+              <li data-target="#slider" data-slide-to="2"></li>
+              <li data-target="#slider" data-slide-to="3"></li> 
+            </ol>  
+
+            <div class = "carousel-inner">
+             
+                <div class = "item active" id="Image">
+                  <img src = pic1.jpg class="img-responsive">
+                  <div class="carousel-caption">
+                    <h2>Let's make our cities Better!!!!</h2>
+                  </div>
+                </div>
+              
+
+              
+                <div class = "item" id="Image">
+                  <img src = pic2.jpg class="img-responsive">
+                  <div class="carousel-caption">
+                    <h2>Let's make our cities Better!!!!</h2>
+                  </div>
+                </div>
+              
+                <div class = "item" id="Image">
+                  <img src = pic3.jpg class="img-responsive">
+                  <div class="carousel-caption">
+                    <h2>Let's make our cities Better!!!!</h2>
+                  </div>
+                </div> 
+
+                <div class = "item" id="Image">
+                  <img src = pic4.jpg class="img-responsive">
+                  <div class="carousel-caption">
+                    <h2>Let's make our cities Better!!!!</h2>
+                  </div>
+                </div> 
+            </div>
+            
+
+            <a class="left carousel-control" href="#slider" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+            <a class="right carousel-control" href="#slider" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a> 
+         </div>
+       
+
+      <!--  <div class="container"> -->
           <!--<h2>Form Validation</h2>-->
           <!-- Trigger the modal with a button -->
           <div class = "jumbotron">
@@ -102,7 +155,7 @@
             </div>
           </div>
           
-        </div>
+       <!-- </div> -->
 
 
 
@@ -140,17 +193,29 @@
         </script>
 
 
+        <script src="http://code.jquery.com/jquery-1.12.4.js"
+                 integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+                 crossorigin="anonymous">
+                   
+        </script>
 
-
-
-
-
-
-
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         <script type="text/javascript" src="main.js"></script>
         <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
         <script src="js/bootstrap.min.js"> </script>
+
+        <script>
+          $(function(){
+            $('.carousel').carousel({
+              interval:1000,
+              pause:false,
+              wrap:false,              
+              keyboard:true
+
+            });
+          });
+
+        </script>
 
     </body>
